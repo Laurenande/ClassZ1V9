@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassN1V9"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="545 " Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*" />
@@ -18,7 +18,16 @@
             <ColumnDefinition Width="10*" />
         </Grid.ColumnDefinitions>
 
-        
+        <Menu  Grid.ColumnSpan="2"
+               Grid.RowSpan="2"
+               VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть"  Click="MenuItem_Click_1"/>
+                <MenuItem Header="Сохранить"  Click="MenuItem_Click_2"/>
+                <Separator/>
+                <MenuItem Header="Выход"  Click="MenuItem_Click_3"/>
+            </MenuItem>
+        </Menu>
 
         <StackPanel Grid.Column="1"
                     Margin="0,10,0,0"
@@ -26,7 +35,7 @@
                     >
             <GroupBox Grid.Column="1"
                       Header="Вычисление прямой на плоскости"
-                      Height="160"
+                      Height="180"
                       Grid.Row="1">
                 
                 <!--Первая точка -->
@@ -65,7 +74,26 @@
                                  Text=""
                                  VerticalAlignment="Top"
                                  Width="120" />
-                        
+                        <Label Content="Выберите цвет:"
+                               Grid.Column="1"
+                               HorizontalAlignment="Left"
+                               Margin="5,10,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                        <CheckBox x:Name="CheckColorBox" Content=""
+                                  Grid.Column="1"
+                                  HorizontalAlignment="Left"
+                                  Margin="0,15,0,0"
+                                  Grid.Row="1"
+                                  VerticalAlignment="Top"
+                                  Checked="CheckColorBox_Checked"
+                                  Unchecked="CheckColorBox_Unchecked" />
+                        <ComboBox x:Name="ColorBox"  Width="104"
+                                   Height="25" Margin="0,10,0,0"
+                                  IsEnabled="False" />
+
+
+
                     </WrapPanel>
                     
                     <!--Вторая точка -->
@@ -132,6 +160,58 @@
                                VerticalAlignment="Top" />
                     </WrapPanel>
 
+                    <WrapPanel>
+                        <Label x:Name="label3"
+                               Content="Вывод"
+                               Grid.Column="1"
+                               Margin="10,0,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                    </WrapPanel>
+
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Grid.Column="1"
+                      Header="Ввод массива"
+                      Grid.Row="1"
+                      Height="300">
+                <StackPanel Margin="10,10,10,10">
+                    <WrapPanel>
+                        <Label Content="Размерность массива: " />
+                        <TextBox Width="30"
+                                 x:Name="ArraySizeBox" />
+                        <Button Content="Создать"
+                                Margin="10,0,10,0"
+                                Click="Button_Click_1" />
+                        <Button Content="Добавить"
+                                Margin="0,0,10,0"
+                                Click="Button_Click_2" />
+                        <Button Content="Очистить"
+                                Margin="0,0,10,0"
+                                Click="Button_Click_3" />
+                        <Label Content="Фильтр по цвету" VerticalAlignment="Center" />
+                        <CheckBox x:Name="CheckFilter"
+                                  Content=""                                
+                                  HorizontalAlignment="Left"                     
+                                  VerticalAlignment="Center"
+                                  Checked="CheckColorBox_Checked1"
+                                  Unchecked="CheckColorBox_Unchecked1" />
+                        <ComboBox x:Name="FilterColorBox"
+                                  Width="104"
+                                  Height="25"
+                                  
+                                  IsEnabled="False"
+                                  SelectionChanged="FilterColorBox_SelectionChanged" />
+                    </WrapPanel>
+                    
+                    <WrapPanel>
+                        <DataGrid Height="220"
+                                  Margin="5,5"
+                                  Width="630"
+                                  x:Name="DataGrid1"
+                                  IsSynchronizedWithCurrentItem="True" />
+
+                    </WrapPanel>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
