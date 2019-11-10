@@ -7,6 +7,133 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="ok" Width="100" Height="50"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="450*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="450*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+
+        
+
+        <StackPanel Grid.Column="1"
+                    Margin="0,10,0,0"
+                    Grid.Row="1"
+                    >
+            <GroupBox Grid.Column="1"
+                      Header="Вычисление прямой на плоскости"
+                      Height="160"
+                      Grid.Row="1">
+                
+                <!--Первая точка -->
+                
+                <StackPanel Margin="0,0,0,0">
+                    <WrapPanel Margin="0,0,0,0" Height="40">
+                        <Label Content="Введите X1"
+                               Grid.Column="1"
+                               HorizontalAlignment="Left"
+                               Margin="5,10,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                        <TextBox x:Name="textbox1"
+                                 Margin="5,10,0,0"
+                                 Grid.Column="1"
+                                 HorizontalAlignment="Left"
+                                 Height="25"
+                                 Grid.Row="1"
+                                 TextWrapping="Wrap"
+                                 Text=""
+                                 VerticalAlignment="Top"
+                                 Width="120" />
+                        <Label Content="Введите Y1"
+                               Grid.Column="1"
+                               HorizontalAlignment="Left"
+                               Margin="5,10,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                        <TextBox x:Name="textbox2"
+                                 Margin="5,10,0,0"
+                                 Grid.Column="1"
+                                 HorizontalAlignment="Left"
+                                 Height="25"
+                                 Grid.Row="1"
+                                 TextWrapping="Wrap"
+                                 Text=""
+                                 VerticalAlignment="Top"
+                                 Width="120" />
+                        
+                    </WrapPanel>
+                    
+                    <!--Вторая точка -->
+                    
+                    <WrapPanel Margin="0,0,0,0" Height="40">
+                        <Label Content="Введите X2"
+                               Grid.Column="1"
+                               HorizontalAlignment="Left"
+                               Margin="5,10,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                        <TextBox x:Name="textbox3"
+                                 Margin="5,10,0,0"
+                                 Grid.Column="1"
+                                 HorizontalAlignment="Left"
+                                 Height="25"
+                                 Grid.Row="1"
+                                 TextWrapping="Wrap"
+                                 Text=""
+                                 VerticalAlignment="Top"
+                                 Width="120" />
+                        <Label Content="Введите Y2"
+                               Grid.Column="1"
+                               HorizontalAlignment="Left"
+                               Margin="5,10,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                        <TextBox x:Name="textbox4"
+                                 Margin="5,10,0,0"
+                                 Grid.Column="1"
+                                 HorizontalAlignment="Left"
+                                 Height="25"
+                                 Grid.Row="1"
+                                 TextWrapping="Wrap"
+                                 Text=""
+                                 VerticalAlignment="Top"
+                                 Width="120" />
+                        <Button Content="Посчитать"
+                                Grid.Column="1"
+                                Margin="10,10,0,0"
+                                Grid.Row="1"
+                                VerticalAlignment="Top"
+                                Width="104"
+                                Height="25"
+                                Click="Button_Click" />
+                    </WrapPanel>
+                    
+                    <WrapPanel >
+                        <Label x:Name="label1"
+                               HorizontalAlignment="Left"
+                               Content="Вывод"
+                               Grid.Column="1"
+                               Margin="10,0,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                    </WrapPanel>
+
+                    <WrapPanel>
+                        <Label x:Name="label2"
+                               Content="Вывод"
+                               Grid.Column="1"
+                               Margin="10,0,0,0"
+                               Grid.Row="1"
+                               VerticalAlignment="Top" />
+                    </WrapPanel>
+
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
     </Grid>
 </Window>

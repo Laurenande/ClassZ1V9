@@ -24,5 +24,21 @@ namespace ClassN1V9
         {
             InitializeComponent();
         }
+
+        Class1 obj;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                obj = new Class1(textbox1.Text, textbox2.Text, textbox3.Text, textbox4.Text);
+                label1.Content = $"Длина = {obj.Dlina}";
+                label2.Content = $"y = {obj.YravK}x + {obj.YravB}";
+            }
+            catch (Exception ex)
+            {
+                label1.Content = ex.Message;
+            }
+
+        }
     }
 }
