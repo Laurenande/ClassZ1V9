@@ -41,10 +41,9 @@ namespace ClassN1V9
             {
                 if (CheckColorBox.IsChecked == true)
                 {
-                    obj = new Class2(textbox1.Text, textbox2.Text, textbox3.Text, textbox4.Text, ColorBox.SelectedValue.ToString());
-                    
-                    label1.Content = $"Длина = {obj.Dlina}";
-                    label2.Content = $"y = {obj.YravK}x + {obj.YravB}";
+                    obj1 = new Class2(textbox1.Text, textbox2.Text, textbox3.Text, textbox4.Text, ColorBox.SelectedItem.ToString());
+                    label1.Content = $"Длина = {obj1.Dlina}";
+                    label2.Content = $"y = {obj1.YravK}x + {obj1.YravB}";
                     label3.Content = $"Цвет = {obj1.Color}";
                 }
                 else
@@ -76,7 +75,7 @@ namespace ClassN1V9
                 MessageBox.Show("Размерность массива не задана");
             }
         }
-        //Добавление
+        //Добавить
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             if (obj1 != null)
@@ -100,7 +99,7 @@ namespace ClassN1V9
                 else { MessageBox.Show("Массив не создан"); }
             }
 
-            if (obj != null && Class1 != null)
+            else if (obj != null && Class1 != null)
             {
                 if (!Class1.Contains(obj))
                 {
@@ -210,7 +209,7 @@ namespace ClassN1V9
                     }
                     catch (Exception)
                     {
-                        
+                        Class2.Add(new Class2(arr[0], arr[1], arr[2], arr[3], arr[4]));
                     }
                 }
                 reader.Close();
@@ -228,6 +227,7 @@ namespace ClassN1V9
             }
 
         }
+
         //Сохранение
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
@@ -241,21 +241,19 @@ namespace ClassN1V9
                     for (int i = 0; i < Class1.Count; i++)
                     {
                         //rad ; perimeter ; area
-                        writer.WriteLine("" + Class1[i].Dlina
-                            + " | " + Class1[i].YravK + " | ");
+                        writer.WriteLine("" + Class1[i].Dlina + " | " + textbox1.Text + " | " + textbox2.Text + " | " + textbox3.Text + " | " + textbox4.Text + " | " + Class1[i].YravK + " | " + Class1[i].YravB);
+
                     }
                 else
                     for (int i = 0; i < Class2.Count; i++)
                     {
                         //rad ; perimeter ; area
-                        writer.WriteLine(""+ Class1[i].Dlina + " | " + Class1[i].YravK + " | " + Class1[i].YravB);
+                        writer.WriteLine("" + Class2[i].Color+ " | " + Class2[i].Dlina + " | " + textbox1.Text + " | " + textbox2.Text + " | " + textbox3.Text + " | " + textbox4.Text + " | " + Class2[i].YravK + " | " + Class2[i].YravB);
                     }
                 writer.Close();
             }
 
         }
-
-        
 
         //Выход
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
